@@ -27,8 +27,8 @@ class EndoDataset(Dataset):
     def __getitem__(self, idx):
         if self.phase == 'val':
             idx = idx + self.train_size
-        mask = tiff.imread('input/masks_ead2020/EAD2020_semantic_'+"{:05d}".format(idx)+'.tif')
-        img = cv2.imread('input/images_ead2020/EAD2020_semantic_'+"{:05d}".format(idx)+'.jpg')
+        mask = tiff.imread('Input/ead2020_semantic_segmentation/masks_ead2020/EAD2020_semantic_'+"{:05d}".format(idx)+'.tif')
+        img = cv2.imread('Input/ead2020_semantic_segmentation/images_ead2020/EAD2020_semantic_'+"{:05d}".format(idx)+'.jpg')
         img = cv2.resize(img,(self.shape,self.shape))
         mask_re = np.zeros((5,self.shape,self.shape))
         for i in range(5):
