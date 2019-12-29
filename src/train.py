@@ -3,7 +3,11 @@ import torch.nn as nn
 import collections
 import os
 from dataset import provider
-# os.system(f"""ls""")
+
+os.system(f"""mkdir EndoCV_Catalyst/Input""")
+os.system(f"""wget https://ead2020-training-detection-framesonly-phase1.s3.eu-west-2.amazonaws.com/ead2020_semantic_segmentation.zip""")
+os.system(f"""unzip -qq ead2020_semantic_segmentation.zip -d Input""")
+
 from models import getModel
 
 try:
