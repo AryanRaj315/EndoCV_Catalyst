@@ -5,7 +5,7 @@ import os
 from dataset import provider
 
 if os.path.exists('EndoCV_Catalyst/Input') == False:
-  if Input("Download Data(Data needs to be stored inside the Input folder which will be done automatically if you press Y)? [Y/n])") == 'Y':
+  if input("Download Data(Data needs to be stored inside the Input folder which will be done automatically if you press Y)? [Y/n])") == 'Y':
     os.system(f"""mkdir EndoCV_Catalyst/Input""")
     os.system(f"""wget https://ead2020-training-detection-framesonly-phase1.s3.eu-west-2.amazonaws.com/ead2020_semantic_segmentation.zip""")
     os.system(f"""unzip -qq ead2020_semantic_segmentation.zip -d Input""")
